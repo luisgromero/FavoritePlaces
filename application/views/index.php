@@ -7,7 +7,8 @@
     </head>
     <body>
         <h1>Favorite Places</h1> 
-        <input id="autocomplete" type="text" name="auto">
+        <input id="autocomplete" type="text" name="auto" size="100">
+        <h3 id="selected"></h3>
         <?php
         // put your code here
         ?>
@@ -22,6 +23,11 @@
             geocoder=new google.maps.Geocoder();
             var input = (document.getElementById('autocomplete'));
             var autocomplete = new google.maps.places.Autocomplete(input);
+            
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                var place = autocomplete.getPlace();
+                $('#selected').text("Place selected: " +place.formatted_address)
+            });
         }
         
         $(document).ready(function(){
