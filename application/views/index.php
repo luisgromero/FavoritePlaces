@@ -6,15 +6,38 @@
           <!-- Bootstrap -->
           <?php $this->asset->stylesheet('bootstrap.min'); ?>
           <?php $this->asset->stylesheet('bootstrap-responsive.min'); ?>
-          
+          <?php $this->asset->stylesheet('/styles/style'); ?>
     </head>
     <body>
-        <div class="container">   <h1>Favorite Places</h1> 
-            <input id="autocomplete" type="text" name="auto" size="100">
-            <h3 id="selected"></h3>
-            <?php
-            // put your code here
-            ?>
+        <div id="wrapper" class="container-fluid">   <h1>Favorite Places</h1> 
+            <div class="row" style='background: #d3d3d3;'>
+                <div class="span4">
+                    <input id="autocomplete" type="text" name="auto" size="100">
+                    <a class="btn btn-primary" href="">Add Place</a>
+                    <h4 id="selected"></h4>
+                </div>
+                <div class="span8">
+                   
+                    <h2>My places</h2>
+                    <div id="table-wrapper">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr>
+                                    <td>Restaurant address</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <?php
+                // put your code here
+                ?>
+            </div>
         </div>
     
         

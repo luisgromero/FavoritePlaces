@@ -1,0 +1,27 @@
+/* 
+    Document   : style.css
+    Created on : Jun 12, 2013, 11:39:00 PM
+    Author     : Luis Romero <luisgromero@live.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#wrapper{
+    background: #ddd;
+    height:400px;
+}
+
+input{
+    margin-top: 8px;
+}
+
+#table-wrapper{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    
+}
