@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Favorite Places</title>
           <!-- Bootstrap -->
           <?php $this->asset->stylesheet('bootstrap.min'); ?>
@@ -9,18 +10,24 @@
           <?php $this->asset->stylesheet('/styles/style'); ?>
     </head>
     <body>
-        <div id="wrapper" class="container-fluid">   <h1>Favorite Places</h1> 
-            <div class="row" style='background: #d3d3d3;'>
+        <div id="wrapper" class="container">   
+            <div class="row-fluid">
+                <div class="span12">
+                       <h1>Favorite Places</h1> 
+                </div>
+            </div>
+         
+            <div class="row-fluid" style='background: #d3d3d3;'>
                 <div class="span4">
                     <input id="autocomplete" type="text" name="auto" size="100">
-                    <a class="btn btn-primary" href="">Add Place</a>
+                    <a id="btn-add" class="btn btn-primary" href="">Add Place</a>
                     <h4 id="selected"></h4>
                 </div>
                 <div class="span8">
                    
                     <h2>My places</h2>
                     <div id="table-wrapper">
-                        <table class="table table-striped">
+                        <table id="table-places" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Name:</th>
@@ -28,7 +35,7 @@
                             </thead>
                             <tbody>
                                  <tr>
-                                    <td>Restaurant address</td>
+                                    <td>information here...</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -56,6 +63,18 @@
     
     <script>
         var geocoder;
+        var place;
+        
+        $('#btn-add').click(function(){
+            //alert(place.formatted_address);
+             $('#table-places > tbody:last').append('<tr><td>'+ place.formatted_address + '</td></tr>');
+             
+        });
+        
+        
+        
+        
+        
         
         function initialize()
         {
@@ -64,7 +83,7 @@
             var autocomplete = new google.maps.places.Autocomplete(input);
             
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                var place = autocomplete.getPlace();
+                place = autocomplete.getPlace();
                 $('#selected').text("Place selected: " +place.formatted_address);
             });
         }

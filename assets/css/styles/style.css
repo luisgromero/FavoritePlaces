@@ -20,8 +20,10 @@ input{
 }
 
 #table-wrapper{
-    width: 100%;
     border: 1px solid #000;
-    border-radius: 5px;
-    
+    height: auto;
+}
+
+table{
+    height: auto;
 }
