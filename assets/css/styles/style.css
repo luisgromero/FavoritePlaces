@@ -24,6 +24,5 @@ input{
     height: auto;
 }
 
-table{
-    height: auto;
-}
+button#btn-add{background: #0081c2;
+color:#fff;}

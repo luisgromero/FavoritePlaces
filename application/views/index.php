@@ -10,7 +10,7 @@
           <?php $this->asset->stylesheet('/styles/style'); ?>
     </head>
     <body>
-        <div id="wrapper" class="container">   
+        <div id="wrapper" class="container-fluid">   
             <div class="row-fluid">
                 <div class="span12">
                        <h1>Favorite Places</h1> 
@@ -20,26 +20,23 @@
             <div class="row-fluid" style='background: #d3d3d3;'>
                 <div class="span4">
                     <input id="autocomplete" type="text" name="auto" size="100">
-                    <a id="btn-add" class="btn btn-primary" href="">Add Place</a>
+                    <button id="btn-add" class="btn">Add Place</button>
+          
                     <h4 id="selected"></h4>
                 </div>
                 <div class="span8">
                    
                     <h2>My places</h2>
-                    <div id="table-wrapper">
+                    
                         <table id="table-places" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Name:</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                 <tr>
-                                    <td>information here...</td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
-                    </div>
+               
                 </div>
                 <?php
                 // put your code here
@@ -47,37 +44,23 @@
             </div>
         </div>
     
-        
-        
-        
-        
-        
-        
-        
-        
+  
         
         
     <!-- Google API and extra Javascript  -->    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
-    
+      <?php $this->asset->javascript('bootstrap.min') ?>
     <script>
         var geocoder;
-        var place;
+        var place; 
+      
         
-        $('#btn-add').click(function(){
-            //alert(place.formatted_address);
-             $('#table-places > tbody:last').append('<tr><td>'+ place.formatted_address + '</td></tr>');
-             
+        $(document).ready(function(){
+            initialize();
         });
         
-        
-        
-        
-        
-        
-        function initialize()
-        {
+        function initialize(){
             geocoder=new google.maps.Geocoder();
             var input = (document.getElementById('autocomplete'));
             var autocomplete = new google.maps.places.Autocomplete(input);
@@ -85,32 +68,20 @@
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 place = autocomplete.getPlace();
                 $('#selected').text("Place selected: " +place.formatted_address);
-            });
+            });    
         }
-        
-        $(document).ready(function(){
-            initialize();
-            /*
-            $("#autocomplete").autocomplete({
-                source:function(request,response){
-                    geocoder.geocode({'address':request.term},function(results){
-                       response($.map(results,function(item){
-                           return{
-                               label:item.formatted_address,
-                               value:item.formatted_address,
-                               latitude:item.geometry.location.lat(),
-                               longitude:item.geometry.location.lng()
-                          };
-                       }));
-             
-                    });
-                },
-                select:function(){}
-            });
-            */
+           
+        $('button#btn-add').click(function(){
+           var data=(place.formatted_address);
+           var data2=$('input').val();
+           alert(data2);
+             //$('#table-places > tbody:last').append('<tr><td>'+ place.formatted_address + '</td></tr>');
+             $('table').append("<tr><td>"+ data2+ "</td></tr>");
         });
         
+        
+        
     </script>
-     <?php $this->asset->javascript('bootstrap.min') ?>
+   
     </body>
 </html>
