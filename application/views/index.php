@@ -74,8 +74,6 @@
         $('button#btn-add').click(function(){
            var data=(place.formatted_address);
            var data2=$('input').val();
-           alert(data2);
-             //$('#table-places > tbody:last').append('<tr><td>'+ place.formatted_address + '</td></tr>');
              $('table').append("<tr><td>"+ data2+ "</td></tr>");
         });
         
