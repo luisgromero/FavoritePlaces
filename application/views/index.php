@@ -74,7 +74,9 @@
         $('button#btn-add').click(function(){
            var data=(place.formatted_address);
            var data2=$('input').val();
-             $('table').append("<tr><td>"+ data2+ "</td></tr>");
+           var googleMapsQuery="http://maps.google.com/?q="+data2;
+           var googleMapsQueryLink="<a class='btn-primary btn-small' href='"+ googleMapsQuery +"'>Show in Map</a>";
+             $('table').append("<tr><td>"+ data2+ "\t "+ googleMapsQueryLink +"</td></tr>");
         });
         
         
