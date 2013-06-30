@@ -29,8 +29,9 @@ class Places extends CI_Model {
         $this->db->insert('places',$data);
     }
     
-    public function deletePlace(){
-        
+    public function deletePlace($place){
+        $data=  array("place"=>$place);
+        $this->db->delete('places',$data);
     }
     
     public function updatePlace(){

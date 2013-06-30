@@ -20,6 +20,12 @@ class Site extends CI_Controller {
             //echo( $data[0]->id + "<br>");
             //echo($data[0]->place);
         }
+        
+        public function removePlace(){
+            $this->load->model('places');
+            $place=$_POST['place'];
+            $this->places->deletePlace($place);
+        }
 }
 
 /* End of file site.php */

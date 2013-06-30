@@ -20,7 +20,7 @@
             <div class="row-fluid" style='background: #d3d3d3;'>
                 <div class="span4">
                     <input id="autocomplete" type="text" name="auto" size="100">
-                    <button id="btn-add" class="btn">Add Place</button>
+                    <button id="btn-add" class="btn"><i class='icon-plus-sign icon-white'></i>Add Place</button>
           
                     <h4 id="selected"></h4>
                 </div>
@@ -39,8 +39,8 @@
                                 //print_r($placeAddress);
                                     //$googleMapsQueryLink="<a class='btn-primary btn-small' href='". $googleMapsQuery. ."'>Show in Map</a>";
                                     foreach ($placeAddress as $row){
-                                        $googleMapsQueryLink="<a class='btn-primary btn-small' href='". $googleMapsQuery.$row->place ."'>Show in Map</a>";
-                                        echo ("<tr><td>". $row->place. "\t".$googleMapsQueryLink."</td></tr>");
+                                        $googleMapsQueryLink="<a class='btn btn-info' href='". $googleMapsQuery.$row->place ."'><i class='icon-map-marker icon-white'></i>Map</a>";
+                                        echo ("<tr><td>". $row->place. "\t <div id='table-data-options'>".$googleMapsQueryLink. "<button class='btn btn-danger'><i class='icon-trash icon-white'></i>Delete</button></div>" ."</td></tr>");
                                     }
                                 
                                 ?>

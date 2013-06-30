@@ -26,3 +26,12 @@ input{
 
 button#btn-add{background: #0081c2;
 color:#fff;}
+
+#table-data-options{
+    position:relative;
+    float: right;
+}
+
+#table-data-options button{
+   margin-left:2px;
+}
