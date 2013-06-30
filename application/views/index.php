@@ -17,41 +17,41 @@
                 </div>
             </div>
          
-            <div class="row-fluid" style='background: #d3d3d3;'>
-                <div class="span4">
-                    <input id="autocomplete" type="text" name="auto" size="100">
+            <div class="row-fluid" style="background: #d3d3d3;">
+                <div class="span12">
+                    <input id="autocomplete" class="input-large" type="text" name="auto" size="100">
                     <button id="btn-add" class="btn"><i class='icon-plus-sign icon-white'></i>Add Place</button>
           
                     <h4 id="selected"></h4>
                 </div>
-                <div class="span8">
-                   
-                    <h2>My places</h2>
-                    
-                        <table id="table-places" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name:</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                //print_r($placeAddress);
-                                    //$googleMapsQueryLink="<a class='btn-primary btn-small' href='". $googleMapsQuery. ."'>Show in Map</a>";
-                                    foreach ($placeAddress as $row){
-                                        $googleMapsQueryLink="<a class='btn btn-info' href='". $googleMapsQuery.$row->place ."'><i class='icon-map-marker icon-white'></i>Map</a>";
-                                        echo ("<tr><td>". $row->place. "\t <div id='table-data-options'>".$googleMapsQueryLink. "<button class='btn btn-danger'><i class='icon-trash icon-white'></i>Delete</button></div>" ."</td></tr>");
-                                    }
-                                
-                                ?>
-                            </tbody>
-                        </table>
-               
+           </div>
+                <div class="row-fluid">    
+                    <div class="span12">                   
+                        <h2>My places</h2>
+                            <table id="table-places" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name:</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                    //print_r($placeAddress);
+                                        //$googleMapsQueryLink="<a class='btn-primary btn-small' href='". $googleMapsQuery. ."'>Show in Map</a>";
+                                        foreach ($placeAddress as $row){
+                                            $googleMapsQueryLink="<a class='btn btn-info' href='". $googleMapsQuery.$row->place ."'><i class='icon-map-marker icon-white'></i>Map</a>";
+                                            echo ("<tr><td>". $row->place. "\t <div id='table-data-options'>".$googleMapsQueryLink. "<button class='btn btn-danger'><i class='icon-trash icon-white'></i>Delete</button></div>" ."</td></tr>");
+                                        }
+
+                                    ?>
+                                </tbody>
+                            </table>
+                    </div>
                 </div>
                 <?php
                 // put your code here
                 ?>
-            </div>
+         
         </div>
     
   

@@ -7,12 +7,12 @@
 */
 
 root { 
-    display: block;
+    /*display: block;*/
 }
 
 #wrapper{
     background: #ddd;
-    height:400px;
+    height:auto;
 }
 
 input{
@@ -34,4 +34,9 @@ color:#fff;}
 
 #table-data-options button{
    margin-left:2px;
+}
+
+
+input#autocomplete{
+    /*width: 50%;*/
 }
