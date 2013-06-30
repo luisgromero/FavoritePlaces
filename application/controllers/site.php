@@ -25,6 +25,7 @@ class Site extends CI_Controller {
             $this->load->model('places');
             $place=$_POST['place'];
             $this->places->deletePlace($place);
+           
         }
 }
 

@@ -24,14 +24,16 @@ class Places extends CI_Model {
     }
     
     public function insertPlace($place){
-        //echo $place . "from model insertPlace";
         $data=  array("place"=>$place);
         $this->db->insert('places',$data);
     }
     
     public function deletePlace($place){
-        $data=  array("place"=>$place);
-        $this->db->delete('places',$data);
+        //$data=  array("place"=>$place);
+        //$this->db->insert('places',$data);
+        
+        $this->db->where('place',$place);
+        $this->db->delete('places');        
     }
     
     public function updatePlace(){
