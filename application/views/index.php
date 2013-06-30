@@ -34,7 +34,17 @@
                                     <th>Name:</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+                                <?php 
+                                //print_r($placeAddress);
+                                    //$googleMapsQueryLink="<a class='btn-primary btn-small' href='". $googleMapsQuery. ."'>Show in Map</a>";
+                                    foreach ($placeAddress as $row){
+                                        $googleMapsQueryLink="<a class='btn-primary btn-small' href='". $googleMapsQuery.$row->place ."'>Show in Map</a>";
+                                        echo ("<tr><td>". $row->place. "\t".$googleMapsQueryLink."</td></tr>");
+                                    }
+                                
+                                ?>
+                            </tbody>
                         </table>
                
                 </div>
@@ -77,8 +87,15 @@
            var googleMapsQuery="http://maps.google.com/?q="+data2;
            var googleMapsQueryLink="<a class='btn-primary btn-small' href='"+ googleMapsQuery +"'>Show in Map</a>";
              $('table').append("<tr><td>"+ data2+ "\t "+ googleMapsQueryLink +"</td></tr>");
+             
+             savePlaceToDB();
         });
         
+        function savePlaceToDB() { 
+            var data = $('input').val();
+            $.post('http://localhost/FavoritePlaces/index.php/site/addPlace', {'place':data} /*, function(response) { alert(response);} */); 
+        }  
+
         
         
     </script>
