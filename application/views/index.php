@@ -86,7 +86,13 @@
              savePlace(addressInputData);
         });
         
-        
+        $(document).on('click','button#btn-delete',function(){
+           var row =$(this).parent().parent().parent();
+           var address=$(this).offsetParent().siblings().text();
+           row.remove();
+           removePlace(address);
+           //console.log(test);                      
+        });
                   
         $('button#btn-delete').click(function(){
            var row =$(this).parent().parent().parent();
