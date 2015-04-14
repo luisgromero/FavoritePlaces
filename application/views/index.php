@@ -42,16 +42,12 @@
                                             $googleMapsQueryLink="<a class='btn btn-info' href='". $googleMapsQuery.$row->place ."'><i class='icon-map-marker icon-white'></i>Map</a>";
                                             echo ("<tr><td>" . "<span id='address'>" . $row->place . "</span> " . "\t <div id='table-data-options'>". $googleMapsQueryLink . "<button id='btn-delete' class='btn btn-danger'><i class='icon-trash icon-white'></i>Delete</button></div>" ."</td></tr>");
                                         }
-
                                     ?>
                                 </tbody>
                             </table>
                     </div>
                 </div>
         </div>
-    
-  
-        
         
     <!-- Google API and extra Javascript  -->    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
@@ -61,8 +57,7 @@
     <script>
         var geocoder;
         var place; 
-      
-        
+
         $(document).ready(function(){
             initialize();
         });
@@ -91,7 +86,6 @@
            var address=$(this).offsetParent().siblings().text();
            row.remove();
            removePlace(address);
-           //console.log(test);                      
         });
                   
         $('button#btn-delete').click(function(){
@@ -99,7 +93,6 @@
            var address=$(this).offsetParent().siblings().text();
            row.remove();
            removePlace(address);
-           //console.log(test);                      
         });
         
         function savePlace(addressInputData) { 
@@ -110,8 +103,6 @@
         function removePlace(address){
             $.post('http://localhost/FavoritePlaces/index.php/site/removePlace', {'place':address} /*, function(response) { alert(response);} */); 
         }             
-        
     </script>
-   
     </body>
 </html>
