@@ -97,11 +97,11 @@
         
         function savePlace(addressInputData) { 
             var data = $('input').val();
-            $.post('http://localhost/FavoritePlaces/index.php/site/addPlace', {'place':data} /*, function(response) { alert(response);} */); 
+            $.post('http://localhost/FavoritePlaces/index.php/site/addPlace', {'place':data}); 
         }  
         
         function removePlace(address){
-            $.post('http://localhost/FavoritePlaces/index.php/site/removePlace', {'place':address} /*, function(response) { alert(response);} */); 
+            $.post('http://localhost/FavoritePlaces/index.php/site/removePlace', {'place':address}); 
         }             
     </script>
     </body>
